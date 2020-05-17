@@ -5,7 +5,7 @@
 
 #git clone https://github.com/shayan153/menuAll.git
 
-#cd memuAll
+#cd menuAll
 
 #python3 & python menuAll.py
 
