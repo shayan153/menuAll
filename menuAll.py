@@ -5,6 +5,7 @@ import os
 import sys
 import re
 import random
+import whois
 
 class color:
     HEADER = '\033[95m'
@@ -22,18 +23,33 @@ random.shuffle(color_random)
 def clearScr():
     os.system('clear')
 clearScr()
+re=('''
+sw          swEEEEE ll   cs cs        MM   MM EEEEE
+ sw        sw E     ll cs      OOOOO  M M M M E
+  sw  sw  sw  EEE   ll cs     O     O M  M  M EEE
+   swswswsw   E     ll cs     O     O M     M E
+    sw  sw    EEEEE ll   cs cs O O O  M     M EEEEE
+
+
+ MM   MM EEEEE N    N U   U    A     ll ll
+ M M M M E     N N  N U   U   A A    ll ll
+ M  M  M EEE   N  N N U   U  AAAAA   ll ll
+ M     M E     N   NN U   U A     A  ll ll
+ M     M EEEEE N    N  UUU A       A ll ll
+ ''')
+print(re)
 def menu():
     m=input(color_random[6]+'''
 lotafan yk gozine entekhab kon:
 {1}-----menucalPersian-----{1}
 {2}-----menuGame-----{2}
-{3}-----EXIT-----{3}
+{99}-----EXIT-----{99}
  : ''')
     if m=='1':
         menucalPersian()
     elif m=='2':
         menuGame()
-    elif m=='3':
+    elif m=='99':
         print('by by :)')
     else:
         print('''
@@ -171,8 +187,6 @@ age amadey bazy hasti bezan 'Y' age na bezan 'N'
 
         elif sh.upper()=='N':
             print(color_random[3]+'by by :) ')
+            menu()
     game()
-
 menu()
-
-    
