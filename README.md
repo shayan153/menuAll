@@ -7,7 +7,7 @@
 
 #cd menuAll
 
-#pip install.txt
+#pip install -r requirements.txt
 
 #python3 & python menuAll.py
 
