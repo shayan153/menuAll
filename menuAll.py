@@ -3,9 +3,9 @@ import
 '''
 import os
 import sys
-import re
 import random
-import whois
+import requests
+import json
 
 class color:
     HEADER = '\033[95m'
@@ -23,7 +23,7 @@ random.shuffle(color_random)
 def clearScr():
     os.system('clear')
 clearScr()
-re=('''
+re=(color_random[8]+'''
 sw          swEEEEE ll   cs cs        MM   MM EEEEE
  sw        sw E     ll cs      OOOOO  M M M M E
   sw  sw  sw  EEE   ll cs     O     O M  M  M EEE
@@ -43,12 +43,15 @@ def menu():
 lotafan yk gozine entekhab kon:
 {1}-----menucalPersian-----{1}
 {2}-----menuGame-----{2}
+{3}----IPchecker----{3}
 {99}-----EXIT-----{99}
  : ''')
     if m=='1':
         menucalPersian()
     elif m=='2':
         menuGame()
+    elif m=='3':
+        ipchecker()
     elif m=='99':
         print('by by :)')
     else:
@@ -189,4 +192,20 @@ age amadey bazy hasti bezan 'Y' age na bezan 'N'
             print(color_random[3]+'by by :) ')
             menu()
     game()
+def ipchecker():
+    clearScr()
+    kk=(color_random[5]+'''
+ o lPPP   ccccc l     eeeee  ccccc k  k  eeee  r  rr
+   l   P c      l     e     c      k k   e     r r
+ i lPPP  c      lmmm  eee   c      kk    ee e  rr
+ i l     c      l   m e     c      k k   e     r
+ i l      ccccc l   m eeee   ccccc k  k  eeee  r
+ ''')
+    print(kk)
+    ee=input(color_random[7]+'''
+inter your ip = ''')
+    respons=requests.get('http://ip-api.com/json/%s' % ee)
+    json_date=respons.json()
+    print(json.dumps(json_date,indent = 4,sort_keys=False))
+    menu()
 menu()
