@@ -7,6 +7,8 @@
 
 #cd menuAll
 
+#pip install.txt
+
 #python3 & python menuAll.py
 
 # by by ;)
