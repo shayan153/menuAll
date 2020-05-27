@@ -203,9 +203,18 @@ def ipchecker():
  ''')
     print(kk)
     ee=input(color_random[7]+'''
-inter your ip = ''')
-    respons=requests.get('http://ip-api.com/json/%s' % ee)
-    json_date=respons.json()
-    print(json.dumps(json_date,indent = 4,sort_keys=False))
-    menu()
+baray check kardan ip bezan 'IP'
+baray back bezan 'B'
+: ''')
+    if ee.upper()=='IP':
+        er=input('enter ip : ')
+        respons=requests.get('http://ip-api.com/json/%s' % er)
+        json_date=respons.json()
+        print(json.dumps(json_date,indent = 4,sort_keys=False))
+        menu()
+    elif ee.upper()=='B':
+        menu()
+    else:
+        print('erorr ez gozineh ha estefade kon')
+        ipchecker()
 menu()
