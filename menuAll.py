@@ -40,7 +40,7 @@ sw          swEEEEE ll   cs cs        MM   MM EEEEE
 print(re)
 def menu():
     m=input(color_random[6]+'''
-lotafan yk gozine entekhab kon:
+Please select an option:
 {1}-----menucalPersian-----{1}
 {2}-----menuGame-----{2}
 {3}----IPchecker----{3}
@@ -57,7 +57,7 @@ lotafan yk gozine entekhab kon:
     else:
         print('''
 !!!ERORR!!!
-dost aziz lotfan az gozineh ha entekhab kon''')
+Dear friend, please select only from the options''')
         menu()
 def menucalPersian():
     def clearScr():
@@ -75,12 +75,12 @@ ca     a   a  l  l      l         s  l  a   a  l  \ l
     print(logo)
     def hesab():
         l=input(color_random[9]+'''
-khob hala mikhay che amaliaty angam bedy??
-baray jam bezan----{'+'}
-baray tafrigh bezan-----{'-'}
-baray zarb bezan---{'*'}
-baray taghsim bezan----------{'/'}
-baray back  ham bezan -----{'99'}
+So what do you want to do now???
+Gather for----{'+'}
+To subtract-----{'-'}
+To multiply---{'*'}
+Click to split----------{'/'}
+Click on me to return-----{'99'}
 == ''')
         if l=='+':
             number1=float(input('Enter Number ='))
@@ -103,23 +103,22 @@ baray back  ham bezan -----{'99'}
         else:
             print(color_random[5]+'''
 !!!ERORR!!!
-lotfan az gozine ha entekhab kon
-gozineha:
-zarb:+
-taghsim:/
-jam:+
-tafrigh:- ''')
+Dear friend, please select only from the options
+options:
+multiply=*
+split=/
+gather=+
+subtract=-
+: ''')
         again()
     def again():
         m=input(color_random[4]+'''
-aya dost darid baz hesab konid
-age are bezan 'Y'
-age na bezan 'N'
+If you want to count again, click 'Y', if you don't want to, click 'N'
 == ''')
         if m.upper()=='Y':
             hesab()
         elif m.upper()=='N':
-            print('mamnoon az entekhabeton va beomiddidar :)')
+            print('by by ;)')
             menu()
         else:
             again()
@@ -138,7 +137,7 @@ G     G   AAAAAAA   M   M   M   E
     def game():
         def again():
             sm=input(color_random[0]+'''
-age mikhay dobareh bazi kony bezan 'Y' age na bezan 'N' mamnon = ''')
+If you want to play again, click 'Y', if you don't want to play 'N' : ''')
             if sm.upper()=='Y':
                 clearScr()
                 game()
@@ -148,8 +147,7 @@ age mikhay dobareh bazi kony bezan 'Y' age na bezan 'N' mamnon = ''')
             else:
                 again()
         sh=input(color_random[1]+'''
-age amadey bazy hasti bezan 'Y' age na bezan 'N'
-== ''')
+Click 'Y' to start the game and 'N' to return :  ''')
         if sh.upper()=='Y':
             sequence =[random.choice(['''
  -----
@@ -203,8 +201,8 @@ def ipchecker():
  ''')
     print(kk)
     ee=input(color_random[7]+'''
-baray check kardan ip bezan 'IP'
-baray back bezan 'B'
+To check, tap 'IP'
+to return 'B'
 : ''')
     if ee.upper()=='IP':
         er=input('enter ip : ')
@@ -215,6 +213,6 @@ baray back bezan 'B'
     elif ee.upper()=='B':
         menu()
     else:
-        print('erorr ez gozineh ha estefade kon')
+        print('!!ERORR!! , Dear friend, just use the options')
         ipchecker()
 menu()
