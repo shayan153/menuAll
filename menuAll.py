@@ -45,6 +45,7 @@ Please select an option:
 {2}-----menuGame-----{2}
 {3}----IPchecker----{3}
 {4}----Bitcoin price----{4}
+{5}----Covid19 statistics----{5}
 {99}-----EXIT-----{99}
  : ''')
     if m=='1':
@@ -55,6 +56,8 @@ Please select an option:
         ipchecker()
     elif m=='4':
         Bitcoin_price()
+    elif m=='5':
+        Covid19_statistics()
     elif m=='99':
         print('by by :)')
     else:
@@ -225,19 +228,17 @@ def Bitcoin_price():
         r=requests.get(Url)
         p=float(r.json()['data']['amount'])
         print(color_random[4]+'Bitcoin price is %s dollars '%p)
-        m=input(color_random[6]+'''
-If you want me to give you a sms, hit the price of bitcoin 'O' if you don't want to hit 'E'
-== ''')
-        if m.upper()=='O':
-            Url='https://api.coinbase.com/v2/prices/spot?currency=USD'
-            n=input('enter number: ')
-            url='https://api.kavenegar.com/v1/65443736634F786E634646324A637173726934454F3037484C75366F515A4B314A7869594F5270565063633D/sms/send.json'
-            payload={'receptor':n,'message':'Bitcoin price is %s dollars' % p}
-            respons=requests.post(url,payload)
-        elif m.upper()=='E':
-            print('by by ;) ')
-        else:
-            print('!!erorr!!,You made a mistake, try again')
-            bit()
     bit()
+    menu()
+def Covid19_statistics():
+    clearScr()
+    print(color_random[2]+'''
+   !! attention attention!!
+Dear friend, this program gives statistics from the first day of covid19 until today, and it is updated every day
+''')
+    p=input(color_random[3]+'enter name country: ')
+    url=('https://api.covid19api.com/total/dayone/country/%s'%p)
+    r=requests.get(url)
+    print(r.text)
+    menu()
 menu()
