@@ -71,10 +71,10 @@ def menucalPersian():
     clearScr()
     logo=color_random[2]+''' 
                    p           sss   o    
-  ca a   a    l  l   p  l  r  s           a    l    l
-ca      aaa   l  l p    lr      s    l   aaa   l \  l
-ca     a   a  l  l      l         s  l  a   a  l  \ l
- ca a a     a l  l      l      sss   l a     a l   \l 
+  ca a   a    ll l   p  l  r  s           a    l    l
+ca      aaa   ll l p    lr      s    l   aaa   l \  l
+ca     a   a  ll l      l         s  l  a   a  l  \ l
+ ca a a     a ll l      l      sss   l a     a l   \l 
 
 '''
 
@@ -195,6 +195,8 @@ Click 'Y' to start the game and 'N' to return :  ''')
         elif sh.upper()=='N':
             print(color_random[3]+'by by :) ')
             menu()
+        else:
+            again()
     game()
 def ipchecker():
     clearScr()
@@ -222,8 +224,17 @@ to return 'B'
         print('!!ERORR!! , Dear friend, just use the options')
         ipchecker()
 def Bitcoin_price():
+    clearScr()
+    m=color_random[8]+'''
+b     ii lllllll   cccccc    oo    ii  NN     N
+b     ii   l      c        o    o  ii  N N    N
+bbbb  ii   l     c        o      o ii  N  N   N
+b   b ii   l     c        o      o ii  N   N  N
+b   b ii   l      c        o    o  ii  N    N N
+bbbbb ii   l        ccccc    oo    ii  N     NN
+'''
+    print(m)
     def bit():
-        clearScr()
         Url='https://api.coinbase.com/v2/prices/spot?currency=USD'
         r=requests.get(Url)
         p=float(r.json()['data']['amount'])
