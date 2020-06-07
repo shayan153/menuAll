@@ -46,6 +46,7 @@ Please select an option:
 {3}----IPchecker----{3}
 {4}----Bitcoin price----{4}
 {5}----Covid19 statistics----{5}
+{6}-----Temperatures-----{6}
 {99}-----EXIT-----{99}
  : ''')
     if m=='1':
@@ -58,6 +59,8 @@ Please select an option:
         Bitcoin_price()
     elif m=='5':
         Covid19_statistics()
+    elif m=='6':
+        Temperatures()
     elif m=='99':
         print('by by :)')
     else:
@@ -252,4 +255,29 @@ Dear friend, this program gives statistics from the first day of covid19 until t
     r=requests.get(url)
     print(r.text)
     menu()
+def Temperatures():
+    clearScr()
+    def Temperature():
+        ls1=input(color_random[2]+'''
+Click 'F' to convert Fahrenheit to Celsius and 'C'to convert Celsius to Fahrenheit and 'B' to return
+== ''')
+        if ls1.upper()=='C':
+            og=float(input('enter C°: '))
+            s=(9/5*og+32)
+            print(s,'F°')
+            Temperature()
+        elif ls1.upper()=='F':
+            f=float(input('enter F°: '))
+            v=(f-32)
+            b=5/9
+            j=b*v
+            print(j,'C°')
+            Temperature()
+        elif ls1.upper()=='B':
+            print('Ok come back')
+            menu()
+        else:
+            print('Error!!,You made a mistake and tried again')
+            Temperature()
+    Temperature()
 menu()
