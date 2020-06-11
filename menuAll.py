@@ -254,6 +254,8 @@ Dear friend, this program gives statistics from the first day of covid19 until t
     url=('https://api.covid19api.com/total/dayone/country/%s'%p)
     r=requests.get(url)
     print(r.text)
+    json_date=r.json()
+    print(json.dumps(json_date,indent = 4,sort_keys=False))
     menu()
 def Temperatures():
     clearScr()
